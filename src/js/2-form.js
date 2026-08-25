@@ -25,6 +25,8 @@ function handleSubmit(e) {
     alert('Data is empty');
     return;
   }
+  console.log(formData);
+
   e.target.reset();
   localStorage.removeItem(FILED_NAME);
   formData.email = '';
@@ -36,6 +38,7 @@ const localData = localStorage.getItem(FILED_NAME);
 if (localData) {
   try {
     for (const [key, value] of Object.entries(JSON.parse(localData))) {
+      formData[key] = value;
       formElem.elements[key].value = value;
     }
   } catch (e) {
