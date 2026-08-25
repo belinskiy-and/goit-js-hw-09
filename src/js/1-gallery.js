@@ -14,8 +14,6 @@ let gallery = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-gallery.on('show.simplelightbox');
-
 function getGalleryMarkup(arr) {
   return arr
     .map(
