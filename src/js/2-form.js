@@ -27,6 +27,8 @@ function handleSubmit(e) {
   }
   e.target.reset();
   localStorage.removeItem(FILED_NAME);
+  formData.email = '';
+  formData.message = '';
 }
 
 const localData = localStorage.getItem(FILED_NAME);
@@ -38,5 +40,6 @@ if (localData) {
     }
   } catch (e) {
     alert(e);
+    localStorage.removeItem(FILED_NAME);
   }
 }
